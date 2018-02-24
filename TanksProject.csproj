@@ -75,8 +75,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\DestoryForTime.cs" />
+    <Compile Include="Assets\Scripts\TankAttack.cs" />
+    <Compile Include="Assets\Scripts\TankHealth.cs" />
     <Compile Include="Assets\Scripts\TankMovement.cs" />
-    <Compile Include="Assets\TankAttack.cs" />
+    <Compile Include="Assets\Scripts\shell.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Fonts\Bowlby_One\OFL.txt" />
