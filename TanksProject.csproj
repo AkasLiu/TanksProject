@@ -76,6 +76,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\DestoryForTime.cs" />
+    <Compile Include="Assets\Scripts\FollowTarget.cs" />
     <Compile Include="Assets\Scripts\TankAttack.cs" />
     <Compile Include="Assets\Scripts\TankHealth.cs" />
     <Compile Include="Assets\Scripts\TankMovement.cs" />

@@ -4,9 +4,11 @@ using System.Collections;
 public class shell : MonoBehaviour {
 
     public GameObject shellExplosionPrefab;
+    public AudioClip shellExplosionAudio;
 
-	// Use this for initialization
-	void Start () {
+
+    // Use this for initialization
+    void Start () {
 	
 	}
 	
@@ -19,8 +21,9 @@ public class shell : MonoBehaviour {
     {
         GameObject.Instantiate(shellExplosionPrefab, transform.position, transform.rotation);
         GameObject.Destroy(this.gameObject);
+        AudioSource.PlayClipAtPoint(shellExplosionAudio, transform.position);
 
-        if(collider.tag=="Tank")
+        if (collider.tag=="Tank")
         {
             collider.SendMessage("TakeDamage");
         }

@@ -5,14 +5,20 @@ public class TankMovement : MonoBehaviour {
 
     public float speed = 5;
     public float angularSpeed = 30;
-    private Rigidbody rigidbody;
     public float number = 1;    //
-     
+    public AudioClip idleAudio;
+    public AudioClip drivingAudio;
 
-	// Use this for initialization
-	void Start () {
+    private Rigidbody rigidbody;
+    private AudioSource audio;
+
+
+
+    // Use this for initialization
+    void Start () {
         rigidbody = this.GetComponent<Rigidbody>();
-	}
+        audio = this.GetComponent<AudioSource>();
+    }
 
     void FixedUpdate()
     {
@@ -21,5 +27,18 @@ public class TankMovement : MonoBehaviour {
 
         float h = Input.GetAxis("HorizontalPlayer"+number);
         rigidbody.angularVelocity = transform.up * h * angularSpeed;
+
+        if(Mathf.Abs(h)>0.1 || Mathf.Abs(v) > 0.1)
+        {
+            audio.clip = drivingAudio;
+            if(audio.isPlaying==false)
+                audio.Play();
+        }
+        else
+        {
+            audio.clip = idleAudio;
+            if (audio.isPlaying == false)
+                audio.Play();
+        }
     }
 }
